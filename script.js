@@ -158,6 +158,11 @@ function el(tag, opts = {}, children = []) {
   return node;
 }
 
+/* Shared gradient top-bar (same accent used on Project cards) — call first for any card */
+function cardTopbar() {
+  return el('div', { className: 'card-topbar' });
+}
+
 /* ============ RENDER CONTENT ============ */
 function render(data) {
   const avatarEl = document.getElementById('avatar');
@@ -390,6 +395,7 @@ function renderAboutStats(stats) {
   stats.forEach(stat => {
     const numEl = el('div', { className: 'about-stat-num', text: '0' });
     const card = el('div', { className: 'about-stat glow-border always-glow' }, [
+      cardTopbar(),
       numEl,
       el('div', { className: 'about-stat-label', text: stat.label })
     ]);
@@ -456,8 +462,7 @@ function renderProjects(projects) {
 function buildProjectCard(proj) {
   const card = el('div', { className: 'skill-card proj-card glow-border' });
 
-  const topBar = el('div', { className: 'proj-card-topbar' });
-  card.appendChild(topBar);
+  card.appendChild(cardTopbar());
 
   const icon = el('div', { className: 'skc-icon' });
   icon.innerHTML = ICONS.code;
@@ -509,6 +514,7 @@ function renderGithub(gh) {
       icon.innerHTML = ICONS[sd.icon] || ICONS.spark;
       const numEl = el('div', { className: 'gh-stat-num', text: '—' });
       const card = el('div', { className: 'gh-stat-card glow-border' }, [
+        cardTopbar(),
         icon,
         numEl,
         el('div', { className: 'gh-stat-label', text: sd.label })
@@ -580,6 +586,7 @@ function renderServices(services) {
     const icon = el('div', { className: 'value-icon service-icon' });
     icon.innerHTML = ICONS[s.icon] || ICONS.spark;
     const card = el('div', { className: 'value-card service-card glow-border' }, [
+      cardTopbar(),
       icon,
       el('div', { className: 'value-title', text: s.title }),
       el('div', { className: 'value-desc', text: s.description })
@@ -619,7 +626,10 @@ function renderContact(contact) {
     const socialWrap = document.getElementById('contactSocialList');
     contact.social.forEach(item => {
       const card = el('a', { className: 'social-card glow-border', href: item.href, target: '_blank', rel: 'noopener' });
-      card.innerHTML = ICONS[item.icon] || ICONS.globe;
+      card.appendChild(cardTopbar());
+      const iconWrap = document.createElement('span');
+      iconWrap.innerHTML = ICONS[item.icon] || ICONS.globe;
+      card.appendChild(iconWrap);
       card.appendChild(el('div', { className: 'social-card-label', text: item.label }));
       card.appendChild(el('div', { className: 'social-card-sub', text: item.sub || '' }));
       socialWrap.appendChild(card);
@@ -652,6 +662,12 @@ function renderContact(contact) {
       ctaBtnWrap.appendChild(a);
     });
   }
+
+  document.querySelectorAll('.contact-card').forEach(card => {
+    if (!card.querySelector(':scope > .card-topbar')) {
+      card.insertBefore(cardTopbar(), card.firstChild);
+    }
+  });
 }
 
 /* ============ SKILLS (categorized + filterable) ============ */
@@ -686,6 +702,8 @@ function renderSkills(categories, intro) {
   categories.forEach(cat => {
     const card = el('div', { className: 'skill-card glow-border' });
     card.dataset.category = cat.id;
+
+    card.appendChild(cardTopbar());
 
     const icon = el('div', { className: 'skc-icon' });
     icon.innerHTML = ICONS[cat.icon] || ICONS.code;
@@ -817,6 +835,8 @@ function renderLanguages(languages) {
   languages.forEach(lang => {
     const card = el('div', { className: 'lang-card glow-border' });
 
+    card.appendChild(cardTopbar());
+
     const top = el('div', { className: 'lang-top' }, [
       el('span', { className: 'lang-flag', text: lang.flag || '' }),
       el('div', {}, [
@@ -850,6 +870,7 @@ function renderValues(values) {
     icon.innerHTML = ICONS[val.icon] || ICONS.spark;
 
     const card = el('div', { className: 'value-card glow-border' }, [
+      cardTopbar(),
       icon,
       el('div', { className: 'value-title', text: val.title }),
       el('div', { className: 'value-desc', text: val.description })
@@ -934,7 +955,7 @@ function buildCertCard(cert) {
   });
   info.appendChild(detailBtn);
 
-  const card = el('div', { className: 'cert-card glow-border' }, [thumb, info]);
+  const card = el('div', { className: 'cert-card glow-border' }, [cardTopbar(), thumb, info]);
   card.addEventListener('click', () => openCertModal(cert.image));
   return card;
 }
@@ -994,6 +1015,8 @@ document.addEventListener('DOMContentLoaded', () => {
 function buildEduCard(edu) {
   const card = el('div', { className: 'edu-card glow-border' });
 
+  card.appendChild(cardTopbar());
+
   const badge = el('span', { className: 'edu-badge', text: edu.level });
   const headRow = el('div', { className: 'edu-head-row' });
   const icon = el('div', { className: 'edu-icon' });
@@ -1028,6 +1051,8 @@ function buildEduCard(edu) {
 
 function buildUniversityCard(edu) {
   const card = el('div', { className: 'edu-card edu-card-university glow-border' });
+
+  card.appendChild(cardTopbar());
 
   const badge = el('span', { className: 'edu-badge', text: edu.level });
   const headRow = el('div', { className: 'edu-head-row' });
