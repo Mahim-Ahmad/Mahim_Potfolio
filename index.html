@@ -11,6 +11,9 @@
 </head>
 <body>
 
+<div id="cursorDot" aria-hidden="true"></div>
+<div id="cursorRing" aria-hidden="true"></div>
+
 <div id="scrollProgress" aria-hidden="true"></div>
 
 <!-- ===== PRELOADER ===== -->
@@ -44,23 +47,52 @@
 
 <header>
   <nav>
+    <!-- Left: Profile -->
     <div class="nav-profile">
-      <div class="avatar-wrap">
-        <div class="avatar-ring" aria-hidden="true"></div>
-        <div class="avatar" id="avatar"></div>
-      </div>
-      <div class="brand-name" id="brandName" aria-label="Mahim"></div>
+        <div class="avatar-wrap">
+            <div class="avatar-ring" aria-hidden="true"></div>
+            <div class="avatar" id="avatar"></div>
+        </div>
+        <div class="brand-name" id="brandName" aria-label="Mahim"></div>
     </div>
 
+    <!-- Middle: Desktop Menu -->
     <ul class="navlinks" id="navlinks"></ul>
 
-    <div class="theme-wrap">
-      <button class="theme-toggle" id="themeToggle" aria-haspopup="true" aria-expanded="false" aria-label="Change color theme">
-        <span class="theme-dot"></span>
-      </button>
-      <div class="theme-panel" id="themePanel"></div>
+    <!-- Right: Theme + Hamburger -->
+    <div class="nav-actions">
+
+        <div class="theme-wrap">
+            <button
+                class="theme-toggle"
+                id="themeToggle"
+                aria-haspopup="true"
+                aria-expanded="false"
+                aria-label="Change color theme">
+                <span class="theme-dot"></span>
+            </button>
+
+            <div class="theme-panel" id="themePanel"></div>
+        </div>
+
+        <button
+            class="hamburger"
+            id="hamburgerBtn"
+            aria-label="Toggle menu"
+            aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
     </div>
-  </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+        <ul class="mobile-menu-links" id="mobileMenuLinks"></ul>
+    </div>
+
+</nav>
 </header>
 
 <div class="hero" id="home">
@@ -237,7 +269,37 @@
 
 </div>
 
-<footer id="footerText"></footer>
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer" id="siteFooter">
+  <div class="footer-top wrap">
+    <div class="footer-brand">
+      <div class="footer-brand-name" id="footerBrandName"></div>
+      <p class="footer-brand-tagline" id="footerBrandTagline"></p>
+      <div class="footer-social" id="footerSocial"></div>
+    </div>
+
+    <div class="footer-col">
+      <h4 class="footer-col-title">Quick Links</h4>
+      <ul class="footer-links" id="footerNavLinks"></ul>
+    </div>
+
+    <div class="footer-col">
+      <h4 class="footer-col-title">Get In Touch</h4>
+      <ul class="footer-links" id="footerContactLinks"></ul>
+    </div>
+  </div>
+
+  <div class="footer-divider"></div>
+
+  <div class="footer-bottom wrap">
+    <span id="footerCopyright"></span>
+    <span class="footer-credit">Designed &amp; Built with <span class="footer-heart">♥</span> using HTML, CSS &amp; JS</span>
+  </div>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+  </button>
+</footer>
 
 <!-- ===== CERTIFICATE LIGHTBOX ===== -->
 <div class="cert-modal" id="certModal" aria-hidden="true">

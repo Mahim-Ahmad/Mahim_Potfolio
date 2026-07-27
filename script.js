@@ -86,7 +86,7 @@ function runPreloader() {
     const pctLabel = document.getElementById('plPct');
     const bladesEl = document.getElementById('blades');
 
-    const DURATION = 2000;
+    const DURATION = 1500;
     let start = null;
 
     function frame(t) {
@@ -179,6 +179,14 @@ function render(data) {
     const li = el('li', {}, [a]);
     navWrap.appendChild(li);
   });
+
+  const mobileNavWrap = document.getElementById('mobileMenuLinks');
+  if (mobileNavWrap) {
+    data.nav.forEach(item => {
+      const a = el('a', { text: item.label, href: item.href });
+      mobileNavWrap.appendChild(el('li', {}, [a]));
+    });
+  }
 
   document.getElementById('eyebrowIcon').innerHTML = ICONS.spark;
   document.getElementById('twPromptIcon').innerHTML = ICONS.code;
@@ -345,8 +353,7 @@ function render(data) {
     renderContact(data.contact);
   }
 
-  document.getElementById('footerText').textContent = data.footer;
-}
+renderFooter(data);}
 
 /* ============ TECH MARQUEE ============ */
 function renderTechMarquee(items) {
@@ -447,7 +454,10 @@ function renderProjects(projects) {
 }
 
 function buildProjectCard(proj) {
-  const card = el('div', { className: 'skill-card glow-border' });
+  const card = el('div', { className: 'skill-card proj-card glow-border' });
+
+  const topBar = el('div', { className: 'proj-card-topbar' });
+  card.appendChild(topBar);
 
   const icon = el('div', { className: 'skc-icon' });
   icon.innerHTML = ICONS.code;
@@ -1293,3 +1303,127 @@ function setupThemes(themes) {
   const initial = themes.find(t => t.name === saved) || themes[0];
   applyTheme(initial);
 }
+
+
+/* ============ FOOTER ============ */
+const FOOTER_NAV_ICONS = {
+  'Home': 'spark', 'About': 'users', 'Education': 'gradcap', 'Skills': 'tools',
+  'Projects': 'rocket', 'GitHub': 'github', 'Services': 'compass',
+  'Certificates': 'award', 'Languages': 'globe', 'Values': 'shield', 'Contact': 'message'
+};
+
+function renderFooter(data) {
+  const nameEl = document.getElementById('footerBrandName');
+  if (nameEl) nameEl.textContent = data.meta.name;
+
+  const taglineEl = document.getElementById('footerBrandTagline');
+  if (taglineEl) {
+    taglineEl.textContent = 'Software Engineering student building with AI as a development partner — one diagram, one commit at a time.';
+  }
+
+  const socialWrap = document.getElementById('footerSocial');
+  if (socialWrap && data.contact && data.contact.social) {
+    data.contact.social.forEach(item => {
+      const a = el('a', { className: 'footer-social-link', href: item.href, target: '_blank', rel: 'noopener' });
+      a.innerHTML = ICONS[item.icon] || ICONS.globe;
+      a.setAttribute('aria-label', item.label);
+      socialWrap.appendChild(a);
+    });
+  }
+
+  const navWrap = document.getElementById('footerNavLinks');
+  if (navWrap && data.nav) {
+    data.nav.forEach(item => {
+      const iconKey = FOOTER_NAV_ICONS[item.label] || 'spark';
+      const iconSpan = el('span', { className: 'footer-link-icon' });
+      iconSpan.innerHTML = ICONS[iconKey] || '';
+      const a = el('a', { href: item.href }, [iconSpan, el('span', { text: item.label })]);
+      navWrap.appendChild(el('li', {}, [a]));
+    });
+  }
+
+  const contactWrap = document.getElementById('footerContactLinks');
+  if (contactWrap && data.contact && data.contact.info) {
+    data.contact.info.forEach(item => {
+      const iconSpan = el('span', { className: 'footer-link-icon' });
+      iconSpan.innerHTML = ICONS[item.icon] || ICONS.pin;
+      if (item.href) {
+        const a = el('a', { href: item.href }, [iconSpan, el('span', { text: item.value })]);
+        contactWrap.appendChild(el('li', {}, [a]));
+      } else {
+        contactWrap.appendChild(el('li', {}, [iconSpan, el('span', { text: item.value })]));
+      }
+    });
+  }
+
+  const copyrightEl = document.getElementById('footerCopyright');
+  if (copyrightEl) copyrightEl.textContent = data.footer;
+}
+
+
+/* ============ MOBILE HAMBURGER MENU ============ */
+document.addEventListener('DOMContentLoaded', () => {
+  const btn = document.getElementById('hamburgerBtn');
+  const menu = document.getElementById('mobileMenu');
+  if (!btn || !menu) return;
+
+  btn.addEventListener('click', () => {
+    const isOpen = menu.classList.toggle('open');
+    btn.classList.toggle('open', isOpen);
+    btn.setAttribute('aria-expanded', isOpen);
+    menu.setAttribute('aria-hidden', !isOpen);
+  });
+
+  menu.addEventListener('click', (e) => {
+    if (e.target.tagName === 'A') {
+      menu.classList.remove('open');
+      btn.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+      menu.setAttribute('aria-hidden', 'true');
+    }
+  });
+});
+
+/* ============ CUSTOM GLOW CURSOR ============ */
+(function initGlowCursor() {
+  const dot = document.getElementById('cursorDot');
+  const ring = document.getElementById('cursorRing');
+  if (!dot || !ring) return;
+  if (window.matchMedia && !window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+
+  let mouseX = window.innerWidth / 2, mouseY = window.innerHeight / 2;
+  let ringX = mouseX, ringY = mouseY;
+
+  window.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    dot.style.left = mouseX + 'px';
+    dot.style.top = mouseY + 'px';
+  });
+
+  window.addEventListener('mousedown', () => {
+    ring.classList.add('click');
+    dot.classList.add('click');
+  });
+  window.addEventListener('mouseup', () => {
+    ring.classList.remove('click');
+    dot.classList.remove('click');
+  });
+
+  const hoverTargets = 'a, button, .cta-btn, .skf-btn, .cert-card, .skill-card, .value-card, .lang-card, .about-stat, input, textarea, [role="button"]';
+  document.addEventListener('mouseover', (e) => {
+    if (e.target.closest(hoverTargets)) ring.classList.add('hover');
+  });
+  document.addEventListener('mouseout', (e) => {
+    if (e.target.closest(hoverTargets)) ring.classList.remove('hover');
+  });
+
+  function loop() {
+    ringX += (mouseX - ringX) * 0.18;
+    ringY += (mouseY - ringY) * 0.18;
+    ring.style.left = ringX + 'px';
+    ring.style.top = ringY + 'px';
+    requestAnimationFrame(loop);
+  }
+  requestAnimationFrame(loop);
+})();
