@@ -53,10 +53,8 @@
   ],
   "themes": [
     { "name": "Ocean Teal", "bg": "#081c1e", "bgAlt": "#0c2a2d", "ink": "#e8fbfb", "accent": "#2dd4bf", "accent2": "#4dd4ff", "accent3": "#34d399" },
-    { "name": "Blueprint Navy", "bg": "#0c1a28", "bgAlt": "#0f2138", "ink": "#eaf3fb", "accent": "#ff9f43", "accent2": "#ff6f91", "accent3": "#4dd4ff" },
     { "name": "Terminal Green", "bg": "#081410", "bgAlt": "#0d1f18", "ink": "#eafff4", "accent": "#3ddc84", "accent2": "#34d399", "accent3": "#4dd4ff" },
     { "name": "Midnight Purple", "bg": "#140c22", "bgAlt": "#1d1233", "ink": "#f2ecff", "accent": "#b388ff", "accent2": "#7c5cff", "accent3": "#4dd4ff" },
-    { "name": "Sunset Clay", "bg": "#1c1310", "bgAlt": "#271b16", "ink": "#fdf1e7", "accent": "#ff7a59", "accent2": "#ffb347", "accent3": "#ff4d6d" },
     { "name": "Crimson Draft", "bg": "#1a0c0f", "bgAlt": "#271217", "ink": "#fdeef0", "accent": "#ff4d6d", "accent2": "#ff7a9e", "accent3": "#ffb347" }
   ],
   "techMarquee": [
