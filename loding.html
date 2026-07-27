@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Loading Portfolio</title>
+<style>
+  :root{
+    --bg:#020305;
+    --blue:#3ea6ff;
+    --blue-dim:#1c4d73;
+    --blue-glow:#7fd4ff;
+    --text-dim:#4d6d84;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html,body{
+    height:100%;
+    background: radial-gradient(ellipse at 50% 50%, #06090c 0%, var(--bg) 70%);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:'JetBrains Mono', ui-monospace, monospace;
+    overflow:hidden;
+  }
+
+  .hud{
+    position:relative;
+    width:min(92vw, 640px);
+    height:min(72vw, 400px);
+    background: rgba(6,12,18,.4);
+  }
+
+  .corner-tl{
+    position:absolute;
+    top:10px; left:16px;
+    font-size:.6rem;
+    color: var(--text-dim);
+    letter-spacing:1px;
+    opacity:.8;
+  }
+  .corner-tr{
+    position:absolute;
+    top:10px; right:16px;
+    font-size:.62rem;
+    color: var(--blue);
+    letter-spacing:2px;
+    text-transform:uppercase;
+    opacity:.9;
+  }
+  .corner-br{
+    position:absolute;
+    bottom:10px; right:16px;
+    font-size:.6rem;
+    color: var(--text-dim);
+    letter-spacing:1px;
+    text-align:right;
+    opacity:.8;
+  }
+
+  .wheel-wrap{
+    position:absolute;
+    inset:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .wheel{
+    width:36%;
+    max-width:180px;
+  }
+
+  .rot-slow{
+    transform-origin:200px 200px;
+    animation: spin 14s linear infinite;
+  }
+  .rot-slow-rev{
+    transform-origin:200px 200px;
+    animation: spinRev 18s linear infinite;
+  }
+  .rot-fast{
+    transform-origin:200px 200px;
+    animation: spin 2.4s linear infinite;
+    transition: animation-duration .3s ease;
+  }
+  @keyframes spin{ to{ transform: rotate(360deg); } }
+  @keyframes spinRev{ to{ transform: rotate(-360deg); } }
+
+  .core{
+    animation: pulse 1.6s ease-in-out infinite;
+  }
+  @keyframes pulse{
+    0%,100%{ opacity:.85; }
+    50%{ opacity:1; }
+  }
+
+  /* Moved loading bar - now sits where the dash row used to be */
+  .bl-wrap{
+    position:absolute;
+    left:0; right:0;
+    bottom:56px;
+    width:160px;
+    margin:0 auto;
+  }
+  .bl-hex{
+    position:absolute;
+    left:-22px;
+    top:50%;
+    transform: translateY(-50%);
+    width:12px; height:12px;
+  }
+  .bl-hex-right{
+    position:absolute;
+    right:-22px;
+    top:50%;
+    transform: translateY(-50%);
+    width:12px; height:12px;
+  }
+  .bl-bar{
+    width:160px;
+    height:3px;
+    background: var(--blue-dim);
+    position:relative;
+    overflow:hidden;
+  }
+  .bl-fill{
+    position:absolute; left:0; top:0; bottom:0;
+    width:0%;
+    background: var(--blue);
+    box-shadow: 0 0 6px var(--blue-glow);
+    transition: width .2s ease;
+  }
+
+  .access-text{
+    position:absolute;
+    left:0; right:0;
+    bottom:30px;
+    text-align:center;
+    font-size:.65rem;
+    letter-spacing:4px;
+    color: var(--blue);
+    text-transform:uppercase;
+  }
+  .access-text .dots::after{
+    content:'';
+    animation: dots 1.2s steps(4,end) infinite;
+  }
+  @keyframes dots{
+    0%{ content:''; }
+    25%{ content:'.'; }
+    50%{ content:'..'; }
+    75%{ content:'...'; }
+    100%{ content:''; }
+  }
+
+  .reveal{
+    position:absolute;
+    inset:0;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    opacity:0;
+    pointer-events:none;
+    transition: opacity .8s ease;
+  }
+  .reveal.show{ opacity:1; }
+  .reveal .name{
+    font-family:'Inter', system-ui, sans-serif;
+    font-size:clamp(1.6rem,5vw,2.2rem);
+    font-weight:700;
+    color:#eaf6ff;
+    letter-spacing:1px;
+    text-shadow: 0 0 24px rgba(62,166,255,.6);
+  }
+  .reveal .role{
+    margin-top:6px;
+    font-size:.7rem;
+    letter-spacing:3px;
+    color: var(--blue);
+    text-transform:uppercase;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration:.01s !important; transition-duration:.05s !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hud" id="hud">
+  <div class="wheel-wrap">
+    <svg class="wheel" viewBox="0 0 400 400">
+      <!-- outer dashed ring -->
+      <circle class="rot-slow" cx="200" cy="200" r="170" fill="none" stroke="var(--blue-dim)" stroke-width="1.5" stroke-dasharray="4 10"/>
+
+      <!-- hexagon -->
+      <polygon class="rot-slow-rev" points="200,60 320,130 320,270 200,340 80,270 80,130"
+        fill="none" stroke="var(--blue)" stroke-width="1.3" opacity="0.55"/>
+
+      <!-- tick ring -->
+      <g class="rot-slow" opacity="0.9">
+        <circle cx="200" cy="200" r="120" fill="none" stroke="var(--blue)" stroke-width="1.5" opacity="0.4"/>
+        <g id="ticks"></g>
+      </g>
+
+      <!-- turbine blades -->
+      <g class="rot-fast" id="blades"></g>
+
+      <!-- core -->
+      <circle class="core" cx="200" cy="200" r="26" fill="var(--blue-glow)"/>
+      <circle cx="200" cy="200" r="40" fill="none" stroke="var(--blue-glow)" stroke-width="1" opacity="0.5"/>
+
+      <!-- orbit dots -->
+      <g class="rot-slow-rev">
+        <circle cx="200" cy="30" r="4" fill="var(--blue-glow)"/>
+      </g>
+      <g class="rot-slow">
+        <circle cx="370" cy="200" r="3" fill="var(--blue)"/>
+      </g>
+    </svg>
+  </div>
+
+  <div class="bl-wrap">
+    <svg class="bl-hex" viewBox="0 0 24 24">
+      <polygon points="12,2 21,7 21,17 12,22 3,17 3,7" fill="none" stroke="var(--blue)" stroke-width="1.5"/>
+    </svg>
+    <div class="bl-bar"><div class="bl-fill" id="blFill"></div></div>
+    <svg class="bl-hex-right" viewBox="0 0 24 24">
+      <polygon points="12,2 21,7 21,17 12,22 3,17 3,7" fill="none" stroke="var(--blue)" stroke-width="1.5"/>
+    </svg>
+  </div>
+
+  <div class="access-text"><span id="accessLabel">0%</span></div>
+
+</div>
+
+<script>
+const ticksG = document.getElementById('ticks');
+for(let i=0;i<24;i++){
+  const angle = (i/24) * Math.PI*2;
+  const r1=112, r2= i%3===0 ? 128 : 120;
+  const x1 = 200+Math.cos(angle)*r1, y1=200+Math.sin(angle)*r1;
+  const x2 = 200+Math.cos(angle)*r2, y2=200+Math.sin(angle)*r2;
+  const line = document.createElementNS('http://www.w3.org/2000/svg','line');
+  line.setAttribute('x1',x1); line.setAttribute('y1',y1);
+  line.setAttribute('x2',x2); line.setAttribute('y2',y2);
+  line.setAttribute('stroke','var(--blue)');
+  line.setAttribute('stroke-width','1.3');
+  line.setAttribute('opacity','0.6');
+  ticksG.appendChild(line);
+}
+
+const bladesG = document.getElementById('blades');
+const bladeCount = 14;
+for(let i=0;i<bladeCount;i++){
+  const angle = (i/bladeCount) * 360;
+  const blade = document.createElementNS('http://www.w3.org/2000/svg','path');
+  blade.setAttribute('d', 'M200,200 L214,140 L206,138 L200,160 L194,138 L186,140 Z');
+  blade.setAttribute('fill', '#0a1a24');
+  blade.setAttribute('stroke', 'var(--blue)');
+  blade.setAttribute('stroke-width', '1');
+  blade.setAttribute('transform', `rotate(${angle} 200 200)`);
+  bladesG.appendChild(blade);
+}
+
+const bladesEl = document.getElementById('blades');
+const accessLabel = document.getElementById('accessLabel');
+const blFill = document.getElementById('blFill');
+const reveal = document.getElementById('reveal');
+
+let progress = 0;
+const DURATION = 3200; // fast
+let start = null;
+
+function frame(t){
+  if(!start) start = t;
+  const elapsed = t - start;
+  progress = Math.min(100, (elapsed/DURATION)*100);
+
+  blFill.style.width = progress + '%';
+  accessLabel.textContent = Math.round(progress) + '%';
+
+  const speed = Math.max(0.35, 2.4 - (progress/100)*2.05);
+  bladesEl.style.animationDuration = speed + 's';
+
+  if(progress < 100){
+    requestAnimationFrame(frame);
+  } else {
+    setTimeout(() => reveal.classList.add('show'), 500);
+  }
+}
+requestAnimationFrame(frame);
+</script>
+
+</body>
+</html>

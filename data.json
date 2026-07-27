@@ -1,0 +1,296 @@
+{
+  "meta": {
+    "name": "Mahim",
+    "avatarInitials": "M",
+    "avatarImage": "profile.png",
+    "sheetLabel": "SHEET 01/06 — MAHIM.SE",
+    "drawingNo": "Hello, I'm",
+    "titleBlock": [
+      { "label": "Program", "value": "B.Sc in Software Engineering" },
+      { "label": "Institution", "value": "Daffodil International University" },
+      { "label": "Section", "value": "43J" },
+      { "label": "Term", "value": "Summer 2026" }
+    ],
+    "roles": ["Software Engineering Student", "AI-Driven Developer", "AI/ML Enthusiast", "Problem Solver"],
+    "taglineSegments": [
+      { "text": "I build software with " },
+      { "text": "AI as a development partner", "hl": "hl1" },
+      { "text": " — writing, debugging, and shipping faster by learning how to work alongside intelligent tools. Looking ahead, I'm setting my sights on " },
+      { "text": "DevOps", "hl": "hl2" },
+      { "text": " and going deeper into " },
+      { "text": "AI/ML engineering", "hl": "hl3" },
+      { "text": "." }
+    ],
+    "ctaButtons": [
+      { "label": "Get In Touch", "href": "#contact", "icon": "message" },
+      { "label": "Download CV", "href": "cv.pdf", "icon": "download" },
+      { "label": "Hire Me", "href": "#contact", "icon": "spark" }
+    ],
+    "statusBadgeText": "",
+    "socialLinks": [
+      { "icon": "github", "href": "https://github.com/yourusername", "label": "GitHub" },
+      { "icon": "linkedin", "href": "https://linkedin.com/in/yourusername", "label": "LinkedIn" }
+    ],
+    "stats": [
+      { "num": "18", "label": "Certificates" },
+      { "num": "5+", "label": "Languages Known" },
+      { "num": "8", "label": "Skill Categories" },
+      { "num": "3.9", "label": "Semester CGPA" }
+    ]
+  },
+  "nav": [
+    { "label": "Home", "href": "#home", "tag": "00" },
+    { "label": "About", "href": "#about", "tag": "01" },
+    { "label": "Education", "href": "#education", "tag": "02" },
+    { "label": "Skills", "href": "#skills", "tag": "03" },
+    { "label": "Projects", "href": "#projects", "tag": "04" },
+    { "label": "GitHub", "href": "#github", "tag": "05" },
+    { "label": "Services", "href": "#services", "tag": "06" },
+    { "label": "Certificates", "href": "#certificates", "tag": "07" },
+    { "label": "Languages", "href": "#languages", "tag": "08" },
+    { "label": "Values", "href": "#values", "tag": "09" },
+    { "label": "Contact", "href": "#contact", "tag": "10" }
+  ],
+  "themes": [
+    { "name": "Ocean Teal", "bg": "#081c1e", "bgAlt": "#0c2a2d", "ink": "#e8fbfb", "accent": "#2dd4bf", "accent2": "#4dd4ff", "accent3": "#34d399" },
+    { "name": "Blueprint Navy", "bg": "#0c1a28", "bgAlt": "#0f2138", "ink": "#eaf3fb", "accent": "#ff9f43", "accent2": "#ff6f91", "accent3": "#4dd4ff" },
+    { "name": "Terminal Green", "bg": "#081410", "bgAlt": "#0d1f18", "ink": "#eafff4", "accent": "#3ddc84", "accent2": "#34d399", "accent3": "#4dd4ff" },
+    { "name": "Midnight Purple", "bg": "#140c22", "bgAlt": "#1d1233", "ink": "#f2ecff", "accent": "#b388ff", "accent2": "#7c5cff", "accent3": "#4dd4ff" },
+    { "name": "Sunset Clay", "bg": "#1c1310", "bgAlt": "#271b16", "ink": "#fdf1e7", "accent": "#ff7a59", "accent2": "#ffb347", "accent3": "#ff4d6d" },
+    { "name": "Crimson Draft", "bg": "#1a0c0f", "bgAlt": "#271217", "ink": "#fdeef0", "accent": "#ff4d6d", "accent2": "#ff7a9e", "accent3": "#ffb347" }
+  ],
+  "techMarquee": [
+    { "name": "C", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" },
+    { "name": "C++", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" },
+    { "name": "Java", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
+    { "name": "Python", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
+    { "name": "JavaScript", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
+    { "name": "HTML5", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
+    { "name": "CSS3", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
+    { "name": "Tailwind CSS", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" },
+    { "name": "React", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+    { "name": "Node.js", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
+    { "name": "Next.js", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
+    { "name": "TensorFlow", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" },
+    { "name": "OpenCV", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg" },
+    { "name": "Scikit-Learn", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg" },
+    { "name": "MySQL", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
+    { "name": "Git", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
+    { "name": "GitHub", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" },
+    { "name": "Linux", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" },
+    { "name": "Ubuntu", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ubuntu/ubuntu-plain.svg" },
+    { "name": "VS Code", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" },
+    { "name": "Figma", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" }
+  ],
+  "about": {
+    "heading": "Software Engineering Student & AI-Driven Developer",
+    "photo": "about-photo.png",
+    "paragraphs": [
+      "I'm an SE student who likes taking a system apart on paper before touching a keyboard — DFDs, use case diagrams, and SRS documents first, code second. That habit currently powers RecycleHub, a system-analysis project turned into a working AI prototype.",
+      "I build software with AI as a development partner — writing, debugging, and shipping faster by learning how to work alongside intelligent tools. Alongside coursework, I spend time in the terminal — Linux fundamentals, WSL2 setups, and the lower layers of how an OS actually schedules and runs things.",
+      "With 18+ certificates across Python, TensorFlow, NLP, and Generative AI, I keep learning beyond the classroom — always aiming ahead toward DevOps and deeper AI/ML engineering."
+    ],
+    "infoGrid": [
+      { "label": "Name", "value": "Mahim" },
+      { "label": "University", "value": "Daffodil International University" },
+      { "label": "Program", "value": "B.Sc in Software Engineering" },
+      { "label": "Section", "value": "43J" },
+      { "label": "Location", "value": "Dhaka, Bangladesh" },
+      { "label": "Email", "value": "mahim242-35-705@diu.edu.bd" }
+    ],
+    "stats": [
+      { "num": 10, "suffix": "+", "label": "Projects Completed" },
+      { "num": 18, "suffix": "+", "label": "Certificates Earned" },
+      { "num": 20, "suffix": "+", "label": "Technologies Used" },
+      { "num": 3, "suffix": "", "label": "Years of Learning" }
+    ]
+  },
+  "skillsIntro": "Comprehensive skill matrix spanning programming languages, software engineering, web development, AI/ML, tools, design, and soft skills.",
+  "skillCategories": [
+    { "id": "programming-languages", "title": "Programming Languages", "description": "Core languages used across coursework, coding practice, and project builds.", "icon": "code", "items": [
+      { "name": "C", "tag": "Fundamentals", "percent": 85, "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" },
+      { "name": "C++", "tag": "Pointers & STL", "percent": 88, "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" },
+      { "name": "Java", "tag": "OOP Basics", "percent": 75, "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
+      { "name": "Python", "tag": "Scripting & ML", "percent": 90, "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
+      { "name": "JavaScript", "tag": "ES6+ Vanilla", "percent": 82, "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" }
+    ]},
+    { "id": "web-development", "title": "Web Development", "description": "Front-end and back-end engineering for modern web applications.", "icon": "globe", "items": [
+      { "name": "HTML5", "tag": "Semantic Web", "percent": 92, "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
+      { "name": "CSS3", "tag": "Flexbox & Grid", "percent": 90, "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
+      { "name": "Tailwind CSS", "tag": "Utility Styling", "percent": 85, "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" },
+      { "name": "React", "tag": "Component Architecture", "percent": 78, "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+      { "name": "Node.js", "tag": "Backend Runtime", "percent": 75, "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
+      { "name": "Next.js", "tag": "SSR & Routing", "percent": 70, "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" }
+    ]},
+    { "id": "ai-ml", "title": "AI / ML", "description": "Machine learning, computer vision, and NLP for intelligent product features.", "icon": "code", "items": [
+      { "name": "TensorFlow", "tag": "Deep Learning", "percent": 78, "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" },
+      { "name": "OpenCV", "tag": "Computer Vision", "percent": 75, "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg" },
+      { "name": "Scikit-Learn", "tag": "Classical ML", "percent": 80, "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg" },
+      { "name": "NLP", "tag": "Text Processing", "percent": 72, "logo": "https://cdn.simpleicons.org/naturallanguageprocessing" }
+    ]},
+    { "id": "tools-platforms", "title": "Tools & Platforms", "description": "IDEs, version control, databases, and system-level environments.", "icon": "tools", "items": [
+      { "name": "SQL", "tag": "Queries & Joins", "percent": 85, "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
+      { "name": "XAMPP", "tag": "Apache & MySQL", "percent": 78, "logo": "https://cdn.simpleicons.org/xampp/FB7A24" },
+      { "name": "Code::Blocks", "tag": "C/C++ IDE", "percent": 82, "logo": "https://cdn.simpleicons.org/codeblocks/41B9F5" },
+      { "name": "PyCharm", "tag": "Python IDE", "percent": 80, "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pycharm/pycharm-original.svg" },
+      { "name": "VS Code", "tag": "IDE Mastery", "percent": 92, "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" },
+      { "name": "Git", "tag": "Version Control", "percent": 88, "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
+      { "name": "GitHub", "tag": "Repos & Collaboration", "percent": 88, "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" },
+      { "name": "Linux", "tag": "Shell Basics", "percent": 78, "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" },
+      { "name": "Ubuntu", "tag": "WSL2 Setup", "percent": 78, "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ubuntu/ubuntu-plain.svg" },
+      { "name": "VirtualBox", "tag": "Virtualization", "percent": 72, "logo": "https://cdn.simpleicons.org/virtualbox/183A61" },
+      { "name": "Arduino IDE", "tag": "Embedded Basics", "percent": 65, "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg" },
+      { "name": "Trello", "tag": "Task Management", "percent": 82, "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/trello/trello-plain.svg" }
+    ]},
+    { "id": "creative-design", "title": "Creative & Design", "description": "Visual design, photo editing, and video production tools.", "icon": "brush", "items": [
+      { "name": "Canva", "tag": "UI & Marketing Assets", "percent": 85, "logo": "https://cdn.simpleicons.org/canva/00C4CC" },
+      { "name": "CapCut", "tag": "Video Suite", "percent": 80, "logo": "https://cdn.jsdelivr.net/npm/@lobehub/icons-static-svg@latest/icons/capcut-color.svg" },
+      { "name": "Adobe Premiere Pro", "tag": "Video Editing", "percent": 70, "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/premierepro/premierepro-original.svg" },
+      { "name": "Adobe Photoshop", "tag": "Photo Editing", "percent": 70, "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg" }
+    ]},
+    { "id": "productivity", "title": "Productivity Tools", "description": "Office suite tools for documentation, data, and presentations.", "icon": "tools", "items": [
+      { "name": "MS Word", "tag": "Documentation", "percent": 88, "logo": "https://cdn.simpleicons.org/microsoftword/2B579A" },
+      { "name": "MS Excel", "tag": "Data Analysis", "percent": 80, "logo": "https://cdn.simpleicons.org/microsoftexcel/217346" },
+      { "name": "MS PowerPoint", "tag": "Presentation Design", "percent": 90, "logo": "https://cdn.simpleicons.org/microsoftpowerpoint/B7472A" }
+    ]},
+    { "id": "soft-skills", "title": "Soft Skills", "description": "Interpersonal capabilities for collaborative engineering and leadership.", "icon": "users", "items": [
+      { "name": "Teamwork", "tag": "Agile Collaboration", "percent": 90, "logo": "" },
+      { "name": "Communication", "tag": "Technical Writing", "percent": 88, "logo": "" },
+      { "name": "Problem Solving", "tag": "Root Cause Analysis", "percent": 92, "logo": "" }
+    ]},
+    { "id": "software-engineering", "title": "Software Engineering", "description": "System-level thinking, structuring, and problem-solving principles.", "icon": "code", "items": [
+      { "name": "Data Structures & Algorithms", "tag": "Problem Solving", "percent": 85, "logo": "" },
+      { "name": "OOP", "tag": "Design Principles", "percent": 85, "logo": "" },
+      { "name": "Software Architecture", "tag": "System Design", "percent": 80, "logo": "" },
+      { "name": "SRS & UML Modeling", "tag": "DFD, Use Case", "percent": 88, "logo": "" },
+      { "name": "Database Systems", "tag": "Relational DB", "percent": 82, "logo": "" },
+      { "name": "Statistics", "tag": "Applied Math", "percent": 78, "logo": "" }
+    ]}
+  ],
+  "projects": [
+    {
+      "title": "projects-1",
+      "description": "Frontend assignment project built and deployed as a live web app.",
+      "github": "https://github.com/Mahim-Ahmad/ASSIGNMENT-PRACTICE-6",
+      "live": "https://digitooweb.netlify.app/"
+    },
+    {
+      "title": "projects-2",
+      "description": "A book-focused web application with a clean browsing experience.",
+      "github": "https://github.com/Mahim-Ahmad/book-vibe",
+      "live": "https://earnest-narwhal-089e48.netlify.app/"
+    },
+    {
+      "title": "projects-3",
+      "description": "Front-end practice assignment deployed via GitHub Pages.",
+      "github": "https://github.com/Mahim-Ahmad/Assignment-2",
+      "live": "https://mahim-ahmad.github.io/Assignment-2/"
+    },
+    {
+      "title": "projects-4",
+      "description": "Assignment project focused on a job-listing style web app.",
+      "github": "https://github.com/Mahim-Ahmad/Assignment_4",
+      "live": "https://assignment-4-job.netlify.app/"
+    },
+    {
+      "title": "projects-5",
+      "description": "A tracker app that pulls and displays GitHub issues.",
+      "github": "https://github.com/Mahim-Ahmad/Assignment_5_GitHub-Issues-Tracker",
+      "live": "https://assignment-5-github-issues-traker.netlify.app/"
+    },
+    {
+      "title": "projects-6",
+      "description": "Event management style web project.",
+      "github": "https://github.com/Mahim-Ahmad/Eventrix",
+      "live": ""
+    }
+  ],
+  "github": {
+    "username": "Mahim-Ahmad",
+    "heading": "GitHub Activity",
+    "subheading": "Real-time stats pulled from my GitHub profile"
+  },
+  "services": [
+    {
+      "icon": "code",
+      "title": "Frontend Development",
+      "description": "Building clean, component-driven interfaces with HTML, CSS, and JavaScript."
+    },
+    {
+      "icon": "globe",
+      "title": "Responsive Web Design",
+      "description": "Layouts that adapt cleanly across mobile, tablet, and desktop."
+    },
+    {
+      "icon": "tools",
+      "title": "AI-Assisted Development",
+      "description": "Writing, debugging, and shipping software faster with AI as a development partner."
+    },
+    {
+      "icon": "brush",
+      "title": "System Analysis & Design",
+      "description": "Turning requirements into DFDs, use case diagrams, and SRS documents before writing a line of code."
+    }
+  ],
+  "contact": {
+    "heading": "Get In Touch",
+    "subheading": "Ready to collaborate on a project, an internship, or just talk tech? I'd love to hear from you.",
+    "info": [
+      { "icon": "mail", "label": "Email", "value": "mahim242-35-705@diu.edu.bd", "href": "mailto:mahim242-35-705@diu.edu.bd" },
+      { "icon": "phone", "label": "Phone", "value": "01960603846", "href": "tel:+8801960603846" },
+      { "icon": "pin", "label": "Location", "value": "Dhaka, Bangladesh", "href": null }
+    ],
+    "social": [
+      { "icon": "github", "label": "GitHub", "sub": "Projects & Code", "href": "https://github.com/yourusername" },
+      { "icon": "linkedin", "label": "LinkedIn", "sub": "Professional Network", "href": "https://linkedin.com/in/yourusername" },
+      { "icon": "facebook", "label": "Facebook", "sub": "Say Hello", "href": "https://facebook.com/yourusername" },
+      { "icon": "twitter", "label": "Twitter", "sub": "Thoughts & Updates", "href": "https://twitter.com/yourusername" },
+      { "icon": "whatsapp", "label": "WhatsApp", "sub": "Quick Chat", "href": "https://wa.me/8801960603846" },
+      { "icon": "beecrowd", "label": "Beecrowd", "sub": "Problem Solving", "href": "https://judge.beecrowd.com/en/profile/yourusername" }
+    ],
+    "ctaTitle": "Let's Build Something Together",
+    "ctaText": "Whether it's a web app, an AI-powered tool, or a system design challenge — I'm always excited to collaborate on interesting projects.",
+    "ctaButtons": [
+      { "label": "Email Me", "icon": "mail", "href": "mailto:mahim242-35-705@diu.edu.bd" },
+      { "label": "Call Now", "icon": "phone", "href": "tel:+8801960603846" }
+    ]
+  },
+  "footer": "© 2026 MAHIM — SOFTWARE ENGINEERING PORTFOLIO — SHEET 01/06",
+  "education": [
+    { "type": "university", "level": "B.Sc", "institution": "Daffodil International University", "session": "Ongoing — Summer 2026", "totalSemesters": 12, "semesterGPAs": [3.77, 4, 4, 3.71, 4], "logo": "diu-logo.jpg", "certificate": null },
+    { "level": "HSC", "institution": "Afajuddin Memorial College", "session": "2022 – 2023", "gpa": "5.00", "logo": "afajuddin-logo.jpg", "certificate": "certificates/hsc.jpg" },
+    { "level": "SSC", "institution": "Afajuddin Memorial High School", "session": "2020 – 2021", "gpa": "5.00", "logo": "afajuddin-logo.jpg", "certificate": "certificates/ssc.jpg" }
+  ],
+  "languages": [
+    { "name": "Bangla", "flag": "🇧🇩", "level": "Native", "percent": 100 },
+    { "name": "English", "flag": "🇬🇧", "level": "Professional Working Proficiency", "percent": 85 }
+  ],
+  "values": [
+    { "icon": "target", "title": "Continuous Learning", "description": "Always exploring new tools, languages, and frameworks to stay ahead of the curve." },
+    { "icon": "shield", "title": "Integrity", "description": "Honest, transparent work — in code reviews, team credit, and academic honesty alike." },
+    { "icon": "handshake", "title": "Collaboration", "description": "Software is a team sport. I value clear communication over solo heroics." },
+    { "icon": "spark", "title": "Problem-Solving Mindset", "description": "I break complex systems into diagrams before I break them into code." },
+    { "icon": "compass", "title": "Attention to Detail", "description": "From SRS documents to pixel-level UI polish — the small things compound." },
+    { "icon": "rocket", "title": "Ownership", "description": "I follow through on what I commit to, from first draft to final deployment." }
+  ],
+  "certificates": [
+    { "title": "Python for Data Analysis", "issuer": "Simplilearn (SkillUp)", "certificateId": "23901456", "date": "22nd September 2025", "image": "certificates/cert-01.jpg" },
+    { "title": "Introduction to Web Development with ChatGPT", "issuer": "Simplilearn (SkillUp)", "certificateId": "98765432", "date": "26th January 2026", "image": "certificates/cert-02.jpg" },
+    { "title": "DIU Code Trap Programming Contest, Spring 2025", "issuer": "DIU Software Engineering Club (Daffodil International University)", "certificateId": "", "date": "Spring 2025", "image": "certificates/cert-03.jpg" },
+    { "title": "Prompt Engineering for ChatGPT", "issuer": "Great Learning", "certificateId": "", "date": "2 June 2025", "image": "certificates/cert-04.jpg" },
+    { "title": "Pandas", "issuer": "Kaggle", "certificateId": "", "date": "July 22, 2026", "image": "certificates/cert-05.jpg" },
+    { "title": "Leadership Qualities \u2013 Boss VS Leader", "issuer": "GoEdu (GoEdu.ac)", "certificateId": "", "date": "22 November 2025", "image": "certificates/cert-06.jpg" },
+    { "title": "Python for Beginners", "issuer": "Simplilearn (SkillUp)", "certificateId": "45678901", "date": "25th July 2025", "image": "certificates/cert-07.jpg" },
+    { "title": "OOPs in Java", "issuer": "Simplilearn (SkillUp)", "certificateId": "10026815", "date": "30th March 2026", "image": "certificates/cert-08.jpg" },
+    { "title": "GitHub Basics", "issuer": "Simplilearn (SkillUp)", "certificateId": "10512109", "date": "25th January 2025", "image": "certificates/cert-09.jpg" },
+    { "title": "Full-Stack Development 101", "issuer": "Simplilearn (SkillUp)", "certificateId": "10512104", "date": "25th July 2025", "image": "certificates/cert-10.jpg" },
+    { "title": "TensorFlow for Beginners", "issuer": "Simplilearn (SkillUp)", "certificateId": "10512345", "date": "10th June 2026", "image": "certificates/cert-11.jpg" },
+    { "title": "Introduction to MS Excel", "issuer": "Simplilearn (SkillUp)", "certificateId": "21783491", "date": "25th August 2023", "image": "certificates/cert-12.jpg" },
+    { "title": "Master AI for Web App Development", "issuer": "Simplilearn (SkillUp)", "certificateId": "CHAD10598732", "date": "25th March 2025", "image": "certificates/cert-13.jpg" },
+    { "title": "Natural Language Processing (NLP) and Text Mining Tutorial for Beginners", "issuer": "Simplilearn (SkillUp)", "certificateId": "10512145", "date": "25th July 2026", "image": "certificates/cert-14.jpg" },
+    { "title": "Introduction to Generative AI Studio", "issuer": "Google Cloud / Simplilearn (SkillUp)", "certificateId": "10342740", "date": "13th June 2026", "image": "certificates/cert-15.jpg" },
+    { "title": "Introduction to Python OpenCV", "issuer": "Simplilearn (SkillUp)", "certificateId": "10598732", "date": "25th April 2026", "image": "certificates/cert-16.jpg" },
+    { "title": "Entrepreneurship in Action: Click. Launch. Learn", "issuer": "Passport to Earning Bangladesh (UNICEF / Generation Unlimited)", "certificateId": "", "date": "October 31, 2025", "image": "certificates/cert-17.jpg" },
+    { "title": "Introduction to Critical Infrastructure Protection", "issuer": "OPSWAT Academy", "certificateId": "LJcdRgr7-A", "date": "06/15/2026 (Issued Date)", "image": "certificates/cert-18.jpg" }
+  ]
+}

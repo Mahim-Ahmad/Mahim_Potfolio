@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mahim — Software Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="scrollProgress" aria-hidden="true"></div>
+
+<!-- ===== PRELOADER ===== -->
+<div id="preloader" aria-hidden="true">
+  <div class="hud" id="hud">
+    <div class="wheel-wrap">
+      <svg class="wheel" viewBox="0 0 400 400">
+        <circle class="rot-slow" cx="200" cy="200" r="170" fill="none" stroke="var(--pl-blue-dim)" stroke-width="1.5" stroke-dasharray="4 10"/>
+        <polygon class="rot-slow-rev" points="200,60 320,130 320,270 200,340 80,270 80,130" fill="none" stroke="var(--pl-blue)" stroke-width="1.3" opacity="0.55"/>
+        <g class="rot-slow" opacity="0.9">
+          <circle cx="200" cy="200" r="120" fill="none" stroke="var(--pl-blue)" stroke-width="1.5" opacity="0.4"/>
+          <g id="ticks"></g>
+        </g>
+        <g class="rot-fast" id="blades"></g>
+        <circle class="core" cx="200" cy="200" r="26" fill="var(--pl-blue-glow)"/>
+        <circle cx="200" cy="200" r="40" fill="none" stroke="var(--pl-blue-glow)" stroke-width="1" opacity="0.5"/>
+        <g class="rot-slow-rev"><circle cx="200" cy="30" r="4" fill="var(--pl-blue-glow)"/></g>
+        <g class="rot-slow"><circle cx="370" cy="200" r="3" fill="var(--pl-blue)"/></g>
+      </svg>
+    </div>
+
+    <div class="bl-wrap">
+      <svg class="bl-hex" viewBox="0 0 24 24"><polygon points="12,2 21,7 21,17 12,22 3,17 3,7" fill="none" stroke="var(--pl-blue)" stroke-width="1.5"/></svg>
+      <div class="bl-bar"><div class="bl-fill" id="plFill"></div></div>
+      <svg class="bl-hex-right" viewBox="0 0 24 24"><polygon points="12,2 21,7 21,17 12,22 3,17 3,7" fill="none" stroke="var(--pl-blue)" stroke-width="1.5"/></svg>
+    </div>
+
+    <div class="access-text"><span id="plPct">0%</span></div>
+  </div>
+</div>
+
+<header>
+  <nav>
+    <div class="nav-profile">
+      <div class="avatar-wrap">
+        <div class="avatar-ring" aria-hidden="true"></div>
+        <div class="avatar" id="avatar"></div>
+      </div>
+      <div class="brand-name" id="brandName" aria-label="Mahim"></div>
+    </div>
+
+    <ul class="navlinks" id="navlinks"></ul>
+
+    <div class="theme-wrap">
+      <button class="theme-toggle" id="themeToggle" aria-haspopup="true" aria-expanded="false" aria-label="Change color theme">
+        <span class="theme-dot"></span>
+      </button>
+      <div class="theme-panel" id="themePanel"></div>
+    </div>
+  </nav>
+</header>
+
+<div class="hero" id="home">
+  <div class="hero-grid">
+    <div class="hero-text">
+      <div class="status-badge glow-border" id="statusBadge">
+        <span class="status-dot"></span>
+        <span id="statusBadgeText"></span>
+      </div>
+      <div class="eyebrow">
+        <span class="eyebrow-icon" id="eyebrowIcon"></span>
+        <span id="drawingNo"></span>
+      </div>
+      <h1 id="heroName" class="gradient-name"></h1>
+      <div class="typewriter-line">
+        <span class="tw-prompt-icon" id="twPromptIcon"></span>
+        <span class="tw-text" id="typewriterText"></span><span class="tw-cursor">|</span>
+      </div>
+      <p class="hero-sub" id="tagline"></p>
+      <div class="hero-cta-row">
+        <div class="hero-cta" id="heroCta"></div>
+      </div>
+    </div>
+    <div class="hero-photo-wrap">
+      <div class="hero-photo-outer">
+        <div class="hero-photo-ring" aria-hidden="true"></div>
+        <div class="hero-photo-frame">
+          <img src="hero-photo.png" alt="Mahim" class="hero-photo">
+        </div>
+      </div>
+      <p class="hero-photo-caption"><strong>Software Engineering Student</strong>Daffodil International University</p>
+    </div>
+  </div>
+  <a href="#about" class="scroll-cue" aria-label="Scroll to explore">
+    <span>Scroll to explore</span>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+  </a>
+</div>
+
+<!-- ===== TECH MARQUEE ===== -->
+<div class="tech-marquee" id="techMarquee" aria-hidden="true">
+  <div class="tech-marquee-track" id="techMarqueeTrack"></div>
+</div>
+
+<div class="wrap">
+
+  <section id="about">
+    <div class="sec-head sec-head-glow"><span class="sec-num"><span class="sec-num-text">01</span></span><span class="sec-title">About</span><span class="sec-head-icon" id="aboutHeadIcon"></span><span class="sec-line"></span></div>
+    <div class="about-card glow-border">
+      <div class="about-grid">
+        <div class="about-text-col">
+          <h3 class="about-heading" id="aboutHeading"></h3>
+          <div id="aboutParagraphs"></div>
+          <div class="about-info-grid" id="aboutInfoGrid"></div>
+        </div>
+        <div class="about-photo-col" id="aboutPhotoCol">
+          <div class="about-photo-outer">
+            <div class="about-photo-frame glow-border always-glow">
+              <img alt="Mahim" class="about-photo" id="aboutPhoto">
+            </div>
+          </div>
+          <div class="about-stats-grid" id="aboutStatsGrid"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="sec-head sec-head-glow"><span class="sec-num"><span class="sec-num-text">02</span></span><span class="sec-title">Education</span><span class="sec-head-icon" id="eduHeadIcon"></span><span class="sec-line"></span></div>
+    <div class="generic-grid" id="educationList"><p class="empty-note">Content coming soon.</p></div>
+  </section>
+
+  <section id="skills">
+    <div class="sec-head sec-head-glow"><span class="sec-num"><span class="sec-num-text">03</span></span><span class="sec-title">Materials &amp; Tools</span><span class="sec-head-icon" id="skillsHeadIcon"></span><span class="sec-line"></span></div>
+    <p class="skills-intro" id="skillsIntro"></p>
+    <div class="skills-filter" id="skillsFilter"></div>
+    <div class="skills-grid" id="skillsGrid"></div>
+  </section>
+
+  <section id="projects">
+    <div class="sec-head sec-head-glow"><span class="sec-num"><span class="sec-num-text">04</span></span><span class="sec-title">Projects</span><span class="sec-head-icon" id="projectsHeadIcon"></span><span class="sec-line"></span></div>
+    <div class="generic-grid" id="projectsList"><p class="empty-note">Content coming soon.</p></div>
+  </section>
+
+  <section id="github">
+    <div class="sec-head sec-head-glow"><span class="sec-num"><span class="sec-num-text">05</span></span><span class="sec-title">GitHub Activity</span><span class="sec-head-icon" id="githubHeadIcon"></span><span class="sec-line"></span></div>
+    <p class="skills-intro" id="githubSubheading"></p>
+    <div class="github-stats-grid" id="githubStatsGrid"></div>
+    <div class="github-contrib-card glow-border">
+      <img id="githubContribImg" class="github-contrib-img" alt="GitHub contribution graph">
+    </div>
+    <p class="github-live-note" id="githubLiveNote"></p>
+    <div class="github-cta-row">
+      <a class="cta-btn glow-border cta-secondary" id="githubProfileBtn" target="_blank" rel="noopener"></a>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="sec-head sec-head-glow"><span class="sec-num"><span class="sec-num-text">06</span></span><span class="sec-title">Services</span><span class="sec-head-icon" id="servicesHeadIcon"></span><span class="sec-line"></span></div>
+    <div class="value-grids" id="servicesList"></div>
+  </section>
+
+  <section id="certificates">
+    <div class="sec-head sec-head-glow"><span class="sec-num"><span class="sec-num-text">07</span></span><span class="sec-title">Certificates</span><span class="sec-head-icon" id="certHeadIcon"></span><span class="sec-line"></span></div>
+    <div class="cert-carousel">
+      <div class="cert-track" id="certTrack"></div>
+    </div>
+    <div class="cert-nav">
+      <button class="cert-nav-btn" id="certPrev" aria-label="Previous">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <div class="cert-dots" id="certDots"></div>
+      <button class="cert-nav-btn" id="certNext" aria-label="Next">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
+  </section>
+
+  <section id="languages">
+    <div class="sec-head sec-head-glow"><span class="sec-num"><span class="sec-num-text">08</span></span><span class="sec-title">Languages</span><span class="sec-head-icon" id="langHeadIcon"></span><span class="sec-line"></span></div>
+    <div class="lang-grid" id="languagesList"></div>
+  </section>
+
+  <section id="values">
+    <div class="sec-head sec-head-glow"><span class="sec-num"><span class="sec-num-text">09</span></span><span class="sec-title">Values</span><span class="sec-head-icon" id="valuesHeadIcon"></span><span class="sec-line"></span></div>
+    <div class="value-grid" id="valuesList"></div>
+  </section>
+
+  <section id="contact">
+    <div class="sec-head sec-head-glow"><span class="sec-num"><span class="sec-num-text">10</span></span><span class="sec-title">Contact</span><span class="sec-head-icon" id="contactHeadIcon"></span><span class="sec-line"></span></div>
+
+    <p class="contact-sub-top" id="contactSub"></p>
+
+    <div class="contact-grid">
+      <div class="contact-col">
+        <div class="contact-card glow-border">
+          <div class="contact-card-head"><span id="contactInfoIcon"></span><span>Contact Information</span></div>
+          <div id="contactInfoList"></div>
+        </div>
+        <div class="contact-card glow-border">
+          <div class="contact-card-head"><span id="contactSocialIcon"></span><span>Connect With Me</span></div>
+          <div class="social-grid" id="contactSocialList"></div>
+        </div>
+      </div>
+      <div class="contact-col">
+        <div class="contact-card glow-border">
+          <div class="contact-card-head"><span id="contactFormIcon"></span><span>Send Message</span></div>
+          <form id="contactForm" class="contact-form">
+            <label class="cf-label" for="cfName">Full Name</label>
+            <input class="cf-input" type="text" id="cfName" placeholder="Enter your full name" required>
+
+            <label class="cf-label" for="cfEmail">Email Address</label>
+            <input class="cf-input" type="email" id="cfEmail" placeholder="your.email@domain.com" required>
+
+            <label class="cf-label" for="cfSubject">Subject</label>
+            <input class="cf-input" type="text" id="cfSubject" placeholder="Project inquiry, collaboration, etc.">
+
+            <label class="cf-label" for="cfMessage">Message</label>
+            <textarea class="cf-input cf-textarea" id="cfMessage" rows="5" placeholder="Tell me a bit about what you have in mind..." required></textarea>
+
+            <button type="submit" class="cf-submit">Send Message <span id="cfSubmitIcon"></span></button>
+            <p class="cf-note">Opens your email app with this message pre-filled — no data is stored or sent anywhere else.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-cta">
+      <h3 id="contactCtaTitle"></h3>
+      <p id="contactCtaText"></p>
+      <div class="contact-cta-buttons" id="contactCtaButtons"></div>
+    </div>
+  </section>
+
+</div>
+
+<footer id="footerText"></footer>
+
+<!-- ===== CERTIFICATE LIGHTBOX ===== -->
+<div class="cert-modal" id="certModal" aria-hidden="true">
+  <div class="cert-modal-backdrop" id="certBackdrop"></div>
+  <div class="cert-modal-box">
+    <button class="cert-close" id="certClose" aria-label="Close">&times;</button>
+    <img src="" alt="Certificate" id="certImage">
+    <p class="cert-fallback" id="certFallback">Certificate image not added yet.</p>
+  </div>
+</div>
+
+<!-- ===== SKILL DETAIL MODAL ===== -->
+<div class="skill-modal" id="skillModal" aria-hidden="true">
+  <div class="skill-modal-backdrop" id="skillModalBackdrop"></div>
+  <div class="skill-modal-box glow-border always-glow">
+    <button class="skill-modal-close" id="skillModalClose" aria-label="Close">&times;</button>
+    <div class="skill-modal-scroll">
+      <div class="skill-modal-head">
+        <div class="skill-modal-icon" id="skillModalIcon"></div>
+        <div>
+          <div class="skill-modal-title" id="skillModalTitle"></div>
+          <div class="skill-modal-desc" id="skillModalDesc"></div>
+        </div>
+      </div>
+      <div class="skill-modal-rows" id="skillModalRows"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CERTIFICATE DETAIL MODAL ===== -->
+<div class="skill-modal" id="certDetailModal" aria-hidden="true">
+  <div class="skill-modal-backdrop" id="certDetailBackdrop"></div>
+  <div class="skill-modal-box glow-border always-glow">
+    <button class="skill-modal-close" id="certDetailClose" aria-label="Close">&times;</button>
+    <div class="skill-modal-scroll">
+      <div class="skill-modal-head">
+        <div class="skill-modal-icon" id="certDetailIcon"></div>
+        <div>
+          <div class="skill-modal-title" id="certDetailTitle"></div>
+          <div class="skill-modal-desc" id="certDetailDesc"></div>
+        </div>
+      </div>
+      <div class="cert-detail-rows" id="certDetailRows"></div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+<script src="bg.js"></script>
+</body>
+</html>
